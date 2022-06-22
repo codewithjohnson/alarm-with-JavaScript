@@ -1,6 +1,7 @@
 const selectInputs = document.querySelectorAll('select');
 const alarmBtn = document.querySelector('button');
 const alarmAudio = new Audio('./audio/alarm.mp3');
+let alarmDisplay = document.querySelector('.display__values');
 let alarm;
 
 // FUNCTION TO DISABLE ALL SELECT INPUTS
@@ -87,6 +88,10 @@ alarmBtn.addEventListener('click', () => {
 // FUNCTION TO STOP AND RESET ALARM
 function stopAlarm() {
     clearInterval(setAlarm);
+    setInterval(()=>{
+        alarmDisplay.style.opacity = '0';
+        alarmDisplay.style.opacity = '100';
+    },1000);
     alarmAudio.play();
     alarmAudio.loop = true;
 }
