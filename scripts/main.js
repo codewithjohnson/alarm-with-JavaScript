@@ -3,6 +3,13 @@ const alarmBtn = document.querySelector('button');
 const alarmAudio = new Audio('./audio/alarm.mp3');
 let alarm;
 
+let alarmDisplay = document.querySelector('.display__values');
+
+
+
+
+
+
 // FUNCTION TO DISABLE ALL SELECT INPUTS
 function disableSeelect() {
     selectInputs[0].disabled = true;
@@ -55,6 +62,7 @@ function setAlarmfunction() {
 
     // DISPLAY TIME UNTIL ALARM 
     let alarmDisplay = document.querySelector('.display__values');
+    // console.log(alarmDisplay.textContent);
     alarmDisplay.textContent = `${hour}:${minute}:${second}:${am_pm}`;
 
     if (`${hour}:${minute}:${am_pm}` == alarm) {
@@ -85,10 +93,9 @@ alarmBtn.addEventListener('click', () => {
 
 // FUNCTION TO STOP AND RESET ALARM
 function stopAlarm() {
-    clearInterval(setAlarm); 
+    clearInterval(setAlarm);
     alarmAudio.play();
     alarmAudio.loop = true;
-     
 }
 
 
