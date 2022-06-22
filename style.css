@@ -16,7 +16,8 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: plum;
+    background-color: #dda0dd;
+    /* background-color:rgb(136, 18, 136); */
 }
 
 .container{
@@ -30,8 +31,11 @@ body{
 }
 
 .display{
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.display__values{
+    font-size: 2rem;
     color: rgb(0, 0, 0);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -46,6 +50,7 @@ body{
     font-size: 0.9rem;
     font-weight:bolder;
     cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.829);
 }
 
 .alarm-btn{
