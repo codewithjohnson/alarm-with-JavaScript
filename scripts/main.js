@@ -60,7 +60,7 @@ function setAlarmfunction() {
     alarmDisplay.textContent = `${hour}:${minute}:${second}:${am_pm}`;
 
     if (`${hour}:${minute}:${am_pm}` == alarm) {
-        alarmAudio.play();
+        stopAlarm();
     }
 }
 const setAlarm = setInterval(setAlarmfunction, 1000);
@@ -87,16 +87,16 @@ alarmBtn.addEventListener('click', () => {
 
 // FUNCTION TO STOP AND RESET ALARM
 function stopAlarm() {
-    clearInterval(setAlarm);
-    setTimeout(() => {
-        location.reload();
-    }, 5000);
+    clearInterval(setAlarm); 
+    alarmAudio.play();
+    alarmAudio.loop = true;
+     
 }
 
 
-// END THE ALARM CLOCK ON CLICK
+// END THE ALARM CLOCK AND RELOAD ON CLICK
 alarmBtn.addEventListener('click', () => {
     if (alarmBtn.textContent === 'set alarm' && setAlarm) {
-        stopAlarm();
+        location.reload();
     }
 });
