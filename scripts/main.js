@@ -3,8 +3,6 @@ const alarmBtn = document.querySelector('button');
 const alarmAudio = new Audio('./audio/alarm.mp3');
 let alarm;
 
-
-
 // FUNCTION TO DISABLE ALL SELECT INPUTS
 function disableSeelect() {
     selectInputs[0].disabled = true;
