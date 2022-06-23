@@ -17,6 +17,7 @@ body{
     justify-content: center;
     align-items: center;
     background-color: #dda0dd;
+    background-color: deepskyblue;
 }
 
 .container{
@@ -25,8 +26,7 @@ body{
     justify-content: baseline;
     align-items: center;
     padding: 20px;
-    background-color: #ffe4c4;
-    
+    background-color:cadetblue;
 }
 
 .display{
@@ -58,11 +58,11 @@ body{
     justify-content: center;
     align-items: center;
     margin: 2rem;
-    background-color: rgb(202, 103, 202);
+    background-color:deepskyblue;
 }
 
 button{
-    background-color: inherit;
+    background-color:inherit;
     color: white;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 10px;
