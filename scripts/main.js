@@ -70,8 +70,8 @@ alarmBtn.addEventListener('click', () => {
     // CHANGE ALARM BUTTON TEXT
     if (alarmBtn.textContent === 'set alarm') {
         if (selectInputs[0].value === 'hour' || selectInputs[1].value === 'minute' || selectInputs[2].value === 'AM/PM') {
-
-        } else {
+            window.confirm('Incorrect Values');
+        } else if(selectInputs[0].value != 'hour'){
             alarm = `${selectInputs[0].value}:${selectInputs[1].value}:${selectInputs[2].value}`;
             disableSeelect();
             alarmBtn.textContent = 'stop alarm';
@@ -88,10 +88,6 @@ alarmBtn.addEventListener('click', () => {
 // FUNCTION TO STOP AND RESET ALARM
 function stopAlarm() {
     clearInterval(setAlarm);
-    setInterval(()=>{
-        alarmDisplay.style.opacity = '0';
-        alarmDisplay.style.opacity = '100';
-    },1000);
     alarmAudio.play();
     alarmAudio.loop = true;
 }
@@ -99,7 +95,7 @@ function stopAlarm() {
 
 // END THE ALARM CLOCK AND RELOAD ON CLICK
 alarmBtn.addEventListener('click', () => {
-    if (alarmBtn.textContent === 'set alarm' && setAlarm) {
+    if (alarmBtn.textContent === 'set alarm' && stopAlarm) {
         location.reload();
     }
 });
